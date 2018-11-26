@@ -2,17 +2,7 @@ extends layout
 
 block content
     // Search Wrapper Area Start
-    .search-wrapper.section-padding-100
-        .search-close
-            i.fa.fa-close(aria-hidden='true')
-        .container
-            .row
-                .col-12
-                    .search-content
-                        form(action='#', method='get')
-                            input#search(type='search', name='search', placeholder='Type your keyword...')
-                            button(type='submit')
-                                img(src='img/core-img/search.png', alt='')
+    include includes/search-wrapper-area
     // Search Wrapper Area End
     // ##### Main Content Wrapper Start #####
     .main-content-wrapper.d-flex.clearfix
@@ -28,53 +18,7 @@ block content
                 span
                 span
         // Header Area Start
-        header.header-area.clearfix
-            // Close Icon
-            .nav-close
-                i.fa.fa-close(aria-hidden='true')
-            // Logo
-            .logo
-                a(href='index.html')
-                    img(src='img/core-img/logo.png', alt='')
-            // Amado Nav
-            nav.amado-nav
-                ul
-                    li
-                        a(href='index.html') Home
-                    li
-                        a(href='shop.html') Shop
-                    li.active
-                        a(href='product-details.html') Product
-                    li
-                        a(href='cart.html') Cart
-                    li
-                        a(href='checkout.html') Checkout
-            // Button Group
-            .amado-btn-group.mt-30.mb-100
-                a.btn.amado-btn.mb-15(href='#') %Discount%
-                a.btn.amado-btn.active(href='#') New this week
-            // Cart Menu
-            .cart-fav-search.mb-100
-                a.cart-nav(href='cart.html')
-                    img(src='img/core-img/cart.png', alt='')
-                    |  Cart
-                    span (0)
-                a.fav-nav(href='#')
-                    img(src='img/core-img/favorites.png', alt='')
-                    |  Favourite
-                a.search-nav(href='#')
-                    img(src='img/core-img/search.png', alt='')
-                    |  Search
-            // Social Button
-            .social-info.d-flex.justify-content-between
-                a(href='#')
-                    i.fa.fa-pinterest(aria-hidden='true')
-                a(href='#')
-                    i.fa.fa-instagram(aria-hidden='true')
-                a(href='#')
-                    i.fa.fa-facebook(aria-hidden='true')
-                a(href='#')
-                    i.fa.fa-twitter(aria-hidden='true')
+        include includes/header
         // Header Area End
         // Product Details Area Start
         .single-product-area.section-padding-100.clearfix
