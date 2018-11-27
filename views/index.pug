@@ -4,6 +4,7 @@ block content
   // Search Wrapper Area Start
   include includes/search-wrapper-area
   // Search Wrapper Area End
+
   // ##### Main Content Wrapper Start #####
   .main-content-wrapper.d-flex.clearfix
     // Mobile Nav (max width 767px)
@@ -20,92 +21,23 @@ block content
     // Header Area Start
     include includes/header
     // Header Area End
+
     // Product Catagories Area Start
     .products-catagories-area.clearfix
       .amado-pro-catagory.clearfix
         // Single Catagory
-        .single-products-catagory.clearfix
-          a(href='shop.html')
-            img(src='img/bg-img/1.jpg', alt='')
-            // Hover Content
-            .hover-content
-              .line
-              p From $180
-              h4 Modern Chair
-        // Single Catagory
-        .single-products-catagory.clearfix
-          a(href='shop.html')
-            img(src='img/bg-img/2.jpg', alt='')
-            // Hover Content
-            .hover-content
-              .line
-              p From $180
-              h4 Minimalistic Plant Pot
-        // Single Catagory
-        .single-products-catagory.clearfix
-          a(href='shop.html')
-            img(src='img/bg-img/3.jpg', alt='')
-            // Hover Content
-            .hover-content
-              .line
-              p From $180
-              h4 Modern Chair
-        // Single Catagory
-        .single-products-catagory.clearfix
-          a(href='shop.html')
-            img(src='img/bg-img/4.jpg', alt='')
-            // Hover Content
-            .hover-content
-              .line
-              p From $180
-              h4 Night Stand
-        // Single Catagory
-        .single-products-catagory.clearfix
-          a(href='shop.html')
-            img(src='img/bg-img/5.jpg', alt='')
-            // Hover Content
-            .hover-content
-              .line
-              p From $18
-              h4 Plant Pot
-        // Single Catagory
-        .single-products-catagory.clearfix
-          a(href='shop.html')
-            img(src='img/bg-img/6.jpg', alt='')
-            // Hover Content
-            .hover-content
-              .line
-              p From $320
-              h4 Small Table
-        // Single Catagory
-        .single-products-catagory.clearfix
-          a(href='shop.html')
-            img(src='img/bg-img/7.jpg', alt='')
-            // Hover Content
-            .hover-content
-              .line
-              p From $318
-              h4 Metallic Chair
-        // Single Catagory
-        .single-products-catagory.clearfix
-          a(href='shop.html')
-            img(src='img/bg-img/8.jpg', alt='')
-            // Hover Content
-            .hover-content
-              .line
-              p From $318
-              h4 Modern Rocking Chair
-        // Single Catagory
-        .single-products-catagory.clearfix
-          a(href='shop.html')
-            img(src='img/bg-img/9.jpg', alt='')
-            // Hover Content
-            .hover-content
-              .line
-              p From $318
-              h4 Home Deco
+        each product in products.length ? products : ['No products found']
+          .single-products-catagory.clearfix
+            a(href='shop.html')
+              img(src = product.imageURL, alt='')
+              // Hover Content
+              .hover-content
+                .line
+                p From #{product.symbol}#{product.currency}#{product.cost}
+                h4 #{product.name}
     // Product Catagories Area End
   // ##### Main Content Wrapper End #####
+
   // ##### Newsletter Area Start #####
   section.newsletter-area.section-padding-100-0
     .container
@@ -117,7 +49,7 @@ block content
               | Subscribe for a
               span 25% Discount
             p
-              | Nulla ac convallis lorem, eget euismod nisl. Donec in libero sit amet mi vulputate consectetur. Donec auctor interdum purus, ac finibus massa bibendum nec.
+              | Put some text here Jhean
         // Newsletter Form
         .col-12.col-lg-6.col-xl-5
           .newsletter-form.mb-100
