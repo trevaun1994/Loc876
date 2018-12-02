@@ -47,4 +47,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+function generateURL(service){
+  return url;
+}
+
 module.exports = app;

@@ -460,7 +460,7 @@ img {
       color: #131212;
       font-weight: normal; }
       .main-content-wrapper .header-area .amado-nav li a::after {
-        -webkit-transition-duration: 500ms;
+       /* -webkit-transition-duration: 500ms;
         transition-duration: 500ms;
         width: 30px;
         height: 3px;
@@ -470,7 +470,7 @@ img {
         left: -150px;
         background-color: #fbb710;
         z-index: 10;
-        content: ''; }
+        content: '';*/ }
       .main-content-wrapper .header-area .amado-nav li a:hover, .main-content-wrapper .header-area .amado-nav li a:focus {
         color: #fbb710; }
     .main-content-wrapper .header-area .amado-nav li:hover a::after, .main-content-wrapper .header-area .amado-nav li:focus a::after {
