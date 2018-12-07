@@ -1,18 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-/**
-**Get Product Categories
-**/
 
-/*function getProductCategories(){
-    //Perform ajax call
-    jQuery.post( {}, function (result) {
-        if (result.success === 'true'){
-            saved = true;
-        }
-    },'JSON');
-}*/
 
 productA = {name:"Grocery",symbol:"$", currency:"JMD", cost:"150", imageURL:'img/bg-img/10.jpg'};
 productB = {name:"Electronics",symbol:"$", currency:"JMD", cost:"165", imageURL:'img/bg-img/10.jpg'};
@@ -30,3 +19,17 @@ router.get('/', function(req, res, next) {
 });
 
 module.exports = router;
+
+
+/**
+ **Get Product Categories
+ **/
+
+function getProductCategories(){
+    //Perform ajax call
+    jQuery.get( "localhost"{}, function (result) {
+        if (result.success === 'true'){
+            saved = true;
+        }
+    },'JSON');
+}
