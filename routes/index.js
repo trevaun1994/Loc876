@@ -1,32 +1,31 @@
 var express = require('express');
 var router = express.Router();
+const request = require('request');
+
+
+var categories = [];
 
 /**
 **Get Product Categories
 **/
-
-/*function getProductCategories(){
-    //Perform ajax call
-    jQuery.post( {}, function (result) {
-        if (result.success === 'true'){
-            saved = true;
+function getProductCategories() {
+    request('http://localhost:9000/product/getallcategories', {json: true}, (err, res, body) => {
+        if(err) {
+            return console.log(err);
         }
-    },'JSON');
-}*/
+        body.forEach(function(index){
+            console.log(index)
+            let category = {name:index,symbol:"$", currency:"JMD", cost:"150", imageURL:'img/bg-img/10.jpg'};
+            categories.push(category);
+        });
+    });
+}
 
-productA = {name:"Grocery",symbol:"$", currency:"JMD", cost:"150", imageURL:'img/bg-img/10.jpg'};
-productB = {name:"Electronics",symbol:"$", currency:"JMD", cost:"165", imageURL:'img/bg-img/10.jpg'};
-productC = {name:"Services",symbol:"$", currency:"JMD", cost:"165", imageURL:'img/bg-img/10.jpg'};
-productD = {name:"Cosmetics",symbol:"$", currency:"JMD", cost:"54", imageURL:'img/bg-img/10.jpg'};
-var products = [];
-products.push(productA);
-products.push(productB);
-products.push(productC);
-products.push(productD);
+getProductCategories();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Loc8', products: products });
+  res.render('index', { title: 'Loc8', products: categories });
 });
 
 module.exports = router;
